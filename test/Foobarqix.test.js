@@ -23,6 +23,12 @@ test("ThreeToFoo number should be 3", () => {
 
 test("Number 3 should be Foo", () => {
   const threeToFoo = new ThreeToFoo();
- 
+
   expect(threeToFoo.numberChanged).toBe("Foo");
+});
+
+test("Number 3 should be Foo", () => {
+  const numberTransfomer = new NumberTransformer();
+  const text = numberTransfomer.numberChanger(33);
+  expect(text).toBe("FooFooFoo");
 });
