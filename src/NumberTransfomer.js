@@ -1,19 +1,21 @@
 export default class NumberTransformer {
-  constructor(baseNumber = 1, numberChanged = "") {
-    this.baseNumber = baseNumber;
-    this.numberChanged = numberChanged;
+  constructor() {
+    this.transformedNumbers = "";
   }
 
   numberChanger(input) {
-    const numberArray = input.toString().split("").map(Number);
-    for (let i = 0; i < numberArray.length; i++) {}
-
-    if (parseInt(input) === this.baseNumber) {
-      return this.numberChanged;
+    if (Number.isInteger(parseInt(input) / 3)) {
+      this.transformedNumbers += "Foo";
     }
-    return input;
+    const numberArray = input.toString().split("").map(Number);
+    numberArray.map((n) => {
+      if (n === 3) {
+        this.transformedNumbers += "Foo";
+      }
+    });
+    if (this.transformedNumbers === "") {
+      return input;
+    }
+    return this.transformedNumbers;
   }
 }
-
-//loop through the "input" array and assign the classes to the numbers
-//executes logic from each class and concatinate the final string

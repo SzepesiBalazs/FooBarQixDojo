@@ -1,34 +1,34 @@
 import NumberTransformer from "../src/NumberTransfomer";
-import ThreeToFoo from "../src/ThreeToFoo";
+import ThreeToFoo from "../src/Three";
 
 describe("FooBarQix", () => {
-  test("ThreeToFoo in instance of NumberTransformer", () => {
-    const threeToFoo = new ThreeToFoo();
-
-    expect(threeToFoo instanceof NumberTransformer).toBe(true);
+  test("Number 9 should be Foo", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(9);
+    expect(text).toBe("Foo");
   });
-});
 
-test("ThreeToFoo should have a number property", () => {
-  const threeToFoo = new ThreeToFoo();
+  test("Number 3 should be FooFoo", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(3);
+    expect(text).toBe("FooFoo");
+  });
 
-  expect(threeToFoo).toHaveProperty("baseNumber");
-});
+  test("Number 33 should be FooFooFoo", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(33);
+    expect(text).toBe("FooFooFoo");
+  });
 
-test("ThreeToFoo number should be 3", () => {
-  const threeToFoo = new ThreeToFoo();
+  test("Number 1 should be 1", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(1);
+    expect(text).toBe(1);
+  });
 
-  expect(threeToFoo.baseNumber).toBe(3);
-});
-
-test("Number 3 should be Foo", () => {
-  const threeToFoo = new ThreeToFoo();
-
-  expect(threeToFoo.numberChanged).toBe("Foo");
-});
-
-test("Number 3 should be Foo", () => {
-  const numberTransfomer = new NumberTransformer();
-  const text = numberTransfomer.numberChanger(33);
-  expect(text).toBe("FooFooFoo");
+  test("Number 36 should be FooFoo", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(36);
+    expect(text).toBe("FooFoo");
+  });
 });
