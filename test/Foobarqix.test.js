@@ -23,7 +23,7 @@ describe("FooBarQix", () => {
   test("Number 1 should be 1", () => {
     const numberTransfomer = new NumberTransformer();
     const text = numberTransfomer.numberChanger(1);
-    expect(text).toBe(1);
+    expect(text).toBe("1");
   });
 
   test("Number 36 should be FooFoo", () => {
@@ -47,12 +47,18 @@ describe("FooBarQix", () => {
   test("Number 10 should be Bar", () => {
     const numberTransfomer = new NumberTransformer();
     const text = numberTransfomer.numberChanger(10);
-    expect(text).toBe("Bar");
+    expect(text).toBe("Bar*");
   });
-  
+
   test("Number 7 should be QixQix", () => {
     const numberTransfomer = new NumberTransformer();
     const text = numberTransfomer.numberChanger(7);
     expect(text).toBe("QixQix");
+  });
+
+  test("Number 101 should be 1*1", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(101);
+    expect(text).toBe("1*1");
   });
 });

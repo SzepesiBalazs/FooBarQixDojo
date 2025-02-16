@@ -4,7 +4,5 @@ export default class Three {
     return "Foo";
   }
 
-  isDivisible(){
-    return "Foo"
-  }
+
 }
