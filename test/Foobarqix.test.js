@@ -61,4 +61,10 @@ describe("FooBarQix", () => {
     const text = numberTransfomer.numberChanger(101);
     expect(text).toBe("1*1");
   });
+  
+  test("Number 303 should be FooFoo*Foo", () => {
+    const numberTransfomer = new NumberTransformer();
+    const text = numberTransfomer.numberChanger(303);
+    expect(text).toBe("FooFoo*Foo");
+  });
 });
